@@ -1,23 +1,50 @@
 package org.example;
 
 public class Calculadora {
+    private int primerNumero;
 
-        public int sumar(int a, int b) {
-            return a + b;
-        }
+    private int segundoNumero;
 
-        public int restar(int a, int b) {
-            return a - b;
-        }
+    public Calculadora() {
+    }
 
-        public int multiplicar(int a, int b) {
-            return a * b;
-        }
+    public Calculadora(int primerNumero, int segundoNumero) {
+        this.primerNumero = primerNumero;
+        this.segundoNumero = segundoNumero;
+    }
 
-        public int dividir(int a, int b) {
-            if (b == 0) {
-                throw new ArithmeticException("No se puede dividir por cero");
-            }
-            return a / b;
+    public int getPrimerNumero() {
+        return primerNumero;
+    }
+
+    public void setPrimerNumero(int primerNumero) {
+        this.primerNumero = primerNumero;
+    }
+
+    public int getSegundoNumero() {
+        return segundoNumero;
+    }
+
+    public void setSegundoNumero(int segundoNumero) {
+        this.segundoNumero = segundoNumero;
+    }
+
+    public int sumar() {
+        return primerNumero + segundoNumero;
+    }
+
+    public int restar() {
+        return primerNumero - segundoNumero;
+    }
+
+    public int multiplicar() {
+        return primerNumero * segundoNumero;
+    }
+
+    public int dividir() {
+        if (segundoNumero == 0) {
+            throw new ArithmeticException("No se puede dividir por cero");
         }
+        return primerNumero / segundoNumero;
+    }
 }
